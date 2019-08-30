@@ -1,3 +1,8 @@
+.container {
+  width: 90vw;
+  padding: 0 5vw;
+}
+
 .main-navigation {
   box-sizing: border-box;
   position: fixed;
@@ -13,45 +18,70 @@
 }
 
 .main-header {
-  box-sizing: border-box;
   position: fixed;
-  width: 100%;
-  max-width: 100%;
-  padding: 0 96px;
   height: 96px;
   display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
   justify-content: space-between;
   align-items: center;
+  padding: 0;
 }
 
-.video-background {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+.main-screen {
+  position: relative;
+  width: calc(100vw - 17px);
+  height: 95vh;
+  background-color: black;
+}
+
+.video-section {
+  z-index: -1;
+}
+
+.header-slider {
+  position: absolute;
+  left: 5vw;
+  width: 45vw;
+  bottom: 96px;
+  z-index: 20;
+}
+.header-big {
+  font-size: 70px;
+  text-transform: uppercase;
+  color: #FBFCFD;
+  margin: 0;
+  font-weight: 900;
 }
 
 .game-section {
+  padding: 64px 0;
   position: relative;
-  /*box-sizing: border-box;*/
   background-color: #FBFCFD;
-  padding: 64px;
   z-index: 10;
 }
 
 .game-section::before, .game-section::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   display: block;
-  content: url("./devider-1.png");
+  content:'';
+  background: transparent url("devider-1.png") center no-repeat;
 
-  width: 100%;
+  width: calc(100vw - 17px);
+  height: 45px;
+  background-size: cover;
 }
 
 .game-section::before {
-  transform-origin: right bottom;
   transform: rotate(180deg);
+  background-position: bottom center;
+  top: -45px;
 }
-
 .game-section::after {
+  background-position: bottom center;
   bottom: -45px;
 }
 
@@ -60,8 +90,6 @@
 }
 
 .single-game-section {
-  position: relative;
-  box-sizing: border-box;
+  padding: 64px 0;
   background-color: #DDE2E5;
-  padding: 64px;
 }
