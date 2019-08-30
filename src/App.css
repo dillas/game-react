@@ -1,33 +1,67 @@
-.App {
-  text-align: center;
+.main-navigation {
+  box-sizing: border-box;
+  position: fixed;
+  padding-top: 96px;
+  top: 0;
+  right: 64px;
+  width: 300px;
+  height: 100vh;
+  background-color: #C84A48;
+  z-index: 100;
+
+  display: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-header {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 96px;
+  height: 96px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.video-background {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-section {
+  position: relative;
+  /*box-sizing: border-box;*/
+  background-color: #FBFCFD;
+  padding: 64px;
+  z-index: 10;
+}
+
+.game-section::before, .game-section::after {
+  position: absolute;
+  display: block;
+  content: url("./devider-1.png");
+
+  width: 100%;
+}
+
+.game-section::before {
+  transform-origin: right bottom;
+  transform: rotate(180deg);
+}
+
+.game-section::after {
+  bottom: -45px;
+}
+
+.game-section p {
+  margin: 0;
+}
+
+.single-game-section {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #DDE2E5;
+  padding: 64px;
 }
