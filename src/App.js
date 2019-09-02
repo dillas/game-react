@@ -14,7 +14,7 @@ class HeaderSlider extends React.Component {
       slidesToScroll: 1,
       arrows: false,
       fade: true,
-      adaptiveHeight: true,
+      // adaptiveHeight: true,
       autoplay: true,
       // cssEase: "linear"
     };
@@ -56,7 +56,7 @@ class CoverExample extends React.Component {
       src: 'bunker42.mp4',
       autoPlay: true,
       muted: true,
-      loop: true,
+      loop: false,
     };
 
     return (
@@ -113,10 +113,10 @@ const MainHeader = () => (
     </div>
 )
 
-const GameSection = () => (
+const GameSection = props => (
   <section className='game-section'>
     <div className='container'>
-      <p>Самая глубокая страйкбольная площадка в москве!</p>
+      {props.children}
     </div>
   </section>
 )
@@ -129,13 +129,31 @@ const SingleGameSection = () => (
   </section>
 )
 
+
+
+const GameCategory = () => (
+  <div className='game-category'>
+    <span>Страйкбол</span>
+  </div>
+)
+
 function App() {
   return (
     <div className="App">
       <MainNavigation />
       <MainHeader />
       <CoverExample />
-      <GameSection />
+      <GameSection>
+
+        <div className='game-category-block'>
+          <GameCategory />
+          <GameCategory />
+          <GameCategory />
+          <GameCategory />
+          <GameCategory />
+        </div>
+        <p>Самая глубокая страйкбольная площадка в москве!</p>
+      </GameSection>
       <SingleGameSection />
     </div>
   );
