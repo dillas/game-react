@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Scrollbar from 'react-scrollbars-custom'
+
 import './index.css';
-import App from './App';
+import App from './App2';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Scrollbar style={{ width: '100%', height: '100%' }}><App /></Scrollbar>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
