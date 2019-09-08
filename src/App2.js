@@ -3,11 +3,13 @@ import Cover from 'react-video-cover';
 import styled from 'styled-components'
 import logo from './logo-horis-small.svg'
 import Slider from "react-slick"
+import ReactMapGL from 'react-map-gl'
 
 import { createGlobalStyle } from 'styled-components'
 import Icon from './social-icons'
 
 const Slider2 = Slider
+const Slider3 = Slider
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -120,6 +122,105 @@ const StyledSection = styled.section`
   ::after {
     background-position: top center;
     bottom: -45px;
+  }
+`;
+
+const StyledSection3 = styled.section`
+  position: relative;
+  background: #C84A48 url("bg-accent.jpg") center no-repeat;
+  z-index: 10;
+  background-size: cover;
+  
+  ::before, ::after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: calc(100vw - 10px);
+    height: 45px;
+    background: transparent url("devider-accent.png") top center no-repeat;
+    background-size: cover;
+  }
+  ::before {
+    transform: rotate(180deg);
+    top: -45px;
+  }
+  ::after {
+    background-position: top center;
+    bottom: -45px;
+  }
+`;
+
+const StyledSection4 = styled.section`
+  position: relative;
+  background: #212429;
+  z-index: 10;
+  background-size: cover;
+  
+  ::before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: calc(100vw - 10px);
+    height: 45px;
+    background: transparent url("devider-dark.png") top center no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+    top: -45px;
+  }
+  .footer-contacts{
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+    .footer-phone{
+      text-align: right;
+      padding-top: 77px;
+      span{
+        margin-top: 112px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.75px;
+        text-transform: uppercase;
+        color: #495057;
+      }
+      p{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        /* or 133% */
+        letter-spacing: 0.4px;
+        color: #FBFCFD;
+      }
+    }
+    .footer-logo{
+      margin: 0 5vw;
+    }
+    .footer-address{
+       padding-top: 77px;
+      span{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.75px;
+        text-transform: uppercase;
+        color: #495057;
+      }
+      p{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        /* or 133% */
+        letter-spacing: 0.4px;
+        color: #FBFCFD;
+      }}
   }
 `;
 
@@ -443,11 +544,162 @@ const StyledNavBlock = styled.ul`
   }
 `
 
+const StyledFooterNavBlock = styled.ul`
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin: 0;
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+  
+  li {
+  display: inline-block;
+    list-style: none;
+    
+    a {
+      position: relative;
+      font-family: 'Roboto';
+      color: #FBFCFD;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 15px;
+      display: inline-block;
+      padding: 8px 32px;
+      letter-spacing: 0.75px;
+      
+      :hover {
+        background: #D1524F;
+      }
+    }
+    a.active {
+      ::before, ::after {
+        position: absolute;
+        content:'';
+        display: inline-block;
+        width: 6px;
+        height: 32px;
+        top: 0;
+        background: url("BracketSmall.svg") no-repeat;
+      }
+      
+      :hover {
+        background: #D1524F;
+      }
+      
+      ::before {
+        left: 0px;
+      }
+      ::after {
+        transform: rotate(180deg);
+        right: 0px;
+      }
+    }
+  }
+`
+const StyledFooterCoryrightBlock = styled.div`
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin: 0;
+  padding: 16px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  .copyright{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 137.69%;
+    color: #495057;
+  }
+  
+  li {
+  display: inline-block;
+    list-style: none;
+    
+    a {
+      position: relative;
+      font-family: 'Roboto';
+      color: #495057;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 15px;
+      display: inline-block;
+      padding: 8px 32px;
+      letter-spacing: 0.75px;
+      svg{
+        fill: #495057;
+      }
+      :hover {
+        background: #D1524F;
+      }
+      
+      :hover svg {
+        fill: #FBFCFD;
+      }
+    }
+    a.active {
+      ::before, ::after {
+        position: absolute;
+        content:'';
+        display: inline-block;
+        width: 6px;
+        height: 32px;
+        top: 0;
+        background: url("BracketSmall.svg") no-repeat;
+      }
+      
+      :hover {
+        background: #D1524F;
+      }
+      
+      ::before {
+        left: 0px;
+      }
+      ::after {
+        transform: rotate(180deg);
+        right: 0px;
+      }
+    }
+  }
+`
+
 const StyledSocialNavBlock = styled.ul`
   display: block;
   text-align: center;
   margin: 0 auto;
   padding: 32px;
+  
+  li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    
+    a {
+      color: #FBFCFD;
+      line-height: 15px;
+      display: inline-block;
+      padding: 8px;
+      letter-spacing: 0.75px;
+      
+      :hover {
+        background: #D1524F;
+      }
+    }
+  }
+`
+
+const StyledSocialFooterNavBlock = styled.ul`
+  display: block;
+  text-align: center;
+  margin: 0;
   
   li {
     display: inline-block;
@@ -570,6 +822,63 @@ const GameSlide = props => {
   )
 }
 
+const SampleNextArrow = props => {
+  const { className, style, onClick, center } = props;
+  const rightPosition = center ? '55vw' : '5vw'
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        zIndex:'200',
+        display: "flex",
+        position: 'absolute',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '64px',
+        top: '50%',
+        right: rightPosition,
+        height: '128px',
+        background: 'rgba(33, 36, 41, .9)',
+        transform: 'translate(0,-50%)'
+      }}
+      onClick={onClick}
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="#FBFCFD">
+        <path d="M9.24264 8L5 3.75736L6.41421 2.34315L12.0711 8L6.41422 13.6569L5 12.2426L9.24264 8Z"/>
+      </svg>
+    </div>
+  );
+}
+
+const SamplePrevArrow = props => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        zIndex:'200',
+        display: "flex",
+        position: 'absolute',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '64px',
+        top: '50%',
+        left: '5vw',
+        height: '128px',
+        background: 'rgba(33, 36, 41, .9)',
+        transform: 'translate(0,-50%)'
+      }}
+      onClick={onClick}
+    >
+    <svg width="16" style={{ transform: 'rotate(180deg)'}} height="16" viewBox="0 0 16 16" fill="#FBFCFD">
+    <path d="M9.24264 8L5 3.75736L6.41421 2.34315L12.0711 8L6.41422 13.6569L5 12.2426L9.24264 8Z"/>
+    </svg>
+    </div>
+  );
+}
+
 const StyledPostCard = styled.div`
 width: 30%;
 .post-image{
@@ -635,7 +944,7 @@ a {
 `
 
 const PostCard = props => {
-  const {id, name, image, cat, date} = props.post
+  const {name, image, cat, date} = props.post
   return(
     <StyledPostCard img={image}>
       <div className='post-image' >
@@ -658,27 +967,162 @@ const NewsBlock = styled.div`
   align-items: center;
   text-align: center;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
   padding-top: 12px;
   background: url("info-star3.png") top no-repeat;
   margin-bottom: 16px;
   color: #495057;
   margin-bottom: 46px;
 }
-
 `
+
+const PartnersBlock = styled.div`
+//display: flex;
+text-align: center;
+margin-top: -45px;
+.header-partners{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 82px;
+  /* identical to box height */
+  letter-spacing: 0.25px;
+  display: block;
+  
+  white-space: nowrap;
+  padding-left: 48px;
+  padding-top: 10px;
+  background: url("info-star3.png") left top no-repeat;
+  color: #495057;
+  margin-right: 32px;
+}
+
+.header-small{
+  display: block;
+  padding-top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 38px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: url("info-star.png") center no-repeat;
+  margin-bottom: 16px;
+  color: #495057;
+}
+
+
+.header-news{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 92px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1.5px;
+  padding-top: 12px;
+  background: url("info-star3.png") top no-repeat;
+  margin-bottom: 16px;
+  color: #495057;
+  margin-bottom: 46px;
+}
+.flex-center{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+    height: 94px;
+    padding: 0 32px;
+}
+`
+
+const OfferBlock = styled.div`
+text-align: center;
+.offer-title {
+  padding: 4px 32px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FBFCFD;
+  text-decoration: none;
+  margin: 0 auto 16px;
+  position: relative;
+  display: inline-block;
+  
+  ::before, ::after {
+    position: absolute;
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 64px;
+    top: 0;
+    background: url("BracketLargeDark.svg") no-repeat;
+    z-index: 200;
+  }
+  
+  ::before {
+    left: 0px;
+  }
+  
+  ::after {
+    transform: rotate(180deg);
+    right: 0px;
+  }
+}
+p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  /* or 157% */
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #FBFCFD;
+  max-width: 450px;
+  margin: 0 auto 48px;
+}
+`
+
 function App() {
   const [navIsShow, setNavIsShow] = useState( false);
-  const settings = {
+  const settings2 = {
     dots: false,
     infinite: true,
     fade: true,
-    arrows: false,
     autoplay: true,
     speed: 200,
-    adaptiveHeight: true,
+    // adaptiveHeight: true,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow center />,
+    prevArrow: <SamplePrevArrow />
+  };
+  const settings3 = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "192px",
+    slidesToShow: 1,
+    speed: 500,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+  const settings4 = {
+    className: "flex-center",
+    infinite: true,
+    centerMode: true,
+    // slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    variableWidth: true
   };
 
   const slides = [
@@ -761,7 +1205,7 @@ function App() {
         </StyledContainer>
       </StyledSection>
       <StyledSection2>
-        <Slider2 {...settings}>
+        <Slider2 {...settings2}>
           {listSlides}
         </Slider2>
       </StyledSection2>
@@ -776,6 +1220,84 @@ function App() {
           </NewsBlock>
         </StyledContainer>
       </StyledSection>
+      <StyledSection2>
+        <Slider3 {...settings3}>
+          <img src="slider-image/1.png" alt="jpg"/>
+          <img src="slider-image/2.png" alt="jpg"/>
+          <img src="slider-image/3.png" alt="jpg"/>
+          <img src="slider-image/4.png" alt="jpg"/>
+          <img src="slider-image/5.png" alt="jpg"/>
+        </Slider3>
+      </StyledSection2>
+      <StyledSection>
+        <StyledContainer>
+          <PartnersBlock>
+            <div className='header-small'>Наши партнеры</div>
+            {/*<div className='header-news'>Наши партнеры</div>*/}
+            <Slider {...settings4}>
+              <div className="flex-center"><img src="partners-logo/01.png" alt="jpg"/></div>
+              <div className="flex-center"><img src="partners-logo/02.png" alt="jpg"/></div>
+              <div className="flex-center"><img src="partners-logo/03.png" alt="jpg"/></div>
+              <div className="flex-center"><img src="partners-logo/04.png" alt="jpg"/></div>
+              <div className="flex-center"><img src="partners-logo/05.png" alt="jpg"/></div>
+              <div className="flex-center"><img src="partners-logo/06.png" alt="jpg"/></div>
+            </Slider>
+          </PartnersBlock>
+        </StyledContainer>
+      </StyledSection>
+      <StyledSection3>
+        <StyledContainer>
+          <OfferBlock>
+            <div className='offer-title'>Закажи свою игру</div>
+            <p>Наши менеджеры обязательно помогут Вам реализовать лучшие мероприятия в Бункере-42</p>
+            <Button1>Заказать игру</Button1>
+          </OfferBlock>
+        </StyledContainer>
+      </StyledSection3>
+      <ReactMapGL
+        mapboxApiAccessToken='pk.eyJ1IjoiZGlsbGFzIiwiYSI6ImNrMGI5NXd1MDBwbGkzaXBqaXV3YWY2NWsifQ.FmWw6nnOWCYBYfpW704f2A'
+        width='100%'
+        height={500}
+        mapStyle="mapbox://styles/dillas/ck0b96roj3ffi1clr1qt8gul8"
+        latitude={55.742}
+        longitude={37.652}
+        zoom={16}
+        onViewportChange={(viewport) => {
+          const {width, height, latitude, longitude, zoom} = viewport;
+          // Optionally call `setState` and use the state to update the map.
+        }}
+      />
+      <StyledSection4>
+          <StyledFooterNavBlock>
+              <li><a className='active' href="/" title="item">Главная</a></li>
+              <li><a href="/" title="item">О нас</a></li>
+              <li><a href="/" title="item">Контакты</a></li>
+              <li><a href="/" title="item">Новости</a></li>
+              <li><a href="/" title="item">Галерея</a></li>
+              <li><a href="/" title="item">Правила</a></li>
+          </StyledFooterNavBlock>
+        <div className='footer-contacts'>
+          <div className='footer-phone'>
+            <span>Контакты</span>
+            <p>game@bunker42.com<br/>+7 499 7030077</p>
+          </div>
+          <div className='footer-logo'><img src="logo-big-vert.png" alt="logo-big-vert.png"/></div>
+          <div className='footer-address'>
+            <span>Адрес</span>
+            <p>115172, г. Москва,<br/>5-й Котельнический переулок, д.11</p>
+          </div>
+        </div>
+        <StyledFooterCoryrightBlock>
+          <div className='copyright'>© “Бункер-42 на Таганке”, 2019</div>
+          <StyledSocialFooterNavBlock>
+            <li><a href="/" title="item"><Icon icon='vk' /></a></li>
+            <li><a href="/" title="item"><Icon icon='fb' /></a></li>
+            <li><a href="/" title="item"><Icon icon='yt' /></a></li>
+            <li><a href="/" title="item"><Icon icon='tw' /></a></li>
+            <li><a href="/" title="item"><Icon icon='ok' /></a></li>
+          </StyledSocialFooterNavBlock>
+        </StyledFooterCoryrightBlock>
+      </StyledSection4>
     </div>
   );
 }
