@@ -7,6 +7,7 @@ import ReactMapGL from 'react-map-gl'
 
 import { createGlobalStyle } from 'styled-components'
 import Icon from './social-icons'
+import Modal from 'react-awesome-modal'
 
 const Slider2 = Slider
 const Slider3 = Slider
@@ -1092,6 +1093,17 @@ p{
 
 function App() {
   const [navIsShow, setNavIsShow] = useState( false);
+
+  const [modalIsShow, setModalIsShow] = useState( true);
+
+  const openModal = () => {
+    setModalIsShow(!modalIsShow)
+  }
+
+  const closeModal = () => {
+    setModalIsShow(!modalIsShow)
+  }
+
   const settings2 = {
     dots: false,
     infinite: true,
@@ -1153,6 +1165,19 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <Modal
+        visible={modalIsShow}
+        width="400"
+        height="300"
+        effect="fadeInUp"
+        onClickAway={() => closeModal()}
+      >
+        <div>
+          <h1>Title</h1>
+          <p>Some Contents</p>
+          <a href="javascript:void(0);" onClick={() => closeModal()}>Close</a>
+        </div>
+      </Modal>
       <MainNavigation navIsShow={navIsShow}>
         <StyledNavBlock>
           <li><a className='active' href="/" title="item">Главная</a></li>
@@ -1162,7 +1187,7 @@ function App() {
           <li><a href="/" title="item">Галерея</a></li>
           <li><a href="/" title="item">Правила</a></li>
         </StyledNavBlock>
-        <Button1>Заказать игру</Button1>
+        <Button1 onClick={() => openModal()}>Заказать игру</Button1>
         <StyledNavBlock second>
           <li><a href="/" title="item">Музей</a></li>
           <li><a href="/" title="item">Ресторан</a></li>
