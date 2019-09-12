@@ -1094,7 +1094,7 @@ p{
 function App() {
   const [navIsShow, setNavIsShow] = useState( false);
 
-  const [modalIsShow, setModalIsShow] = useState( true);
+  const [modalIsShow, setModalIsShow] = useState( false);
 
   const openModal = () => {
     setModalIsShow(!modalIsShow)
