@@ -673,7 +673,6 @@ const Landing = (props) => {
         <StyledContainer>
           <PartnersBlock>
             <div className='header-small'>Наши партнеры</div>
-            {/*<div className='header-news'>Наши партнеры</div>*/}
             <Slider {...settings4}>
               <div className="flex-center"><img src="partners-logo/01.png" alt="jpg"/></div>
               <div className="flex-center"><img src="partners-logo/02.png" alt="jpg"/></div>
