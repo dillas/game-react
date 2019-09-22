@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import Scrollbar from 'react-scrollbars-custom'
 import { BrowserRouter } from 'react-router-dom'
 
-
-import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Layout from './Layout'
 import App from './App'
 
 ReactDOM.render(<BrowserRouter><Scrollbar style={{ width: '100%', height: '100%' }}><App /></Scrollbar></BrowserRouter>, document.getElementById('root'));

@@ -51,7 +51,7 @@ export const StyledSection4 = styled.section`
       padding-top: 77px;
       span{
         margin-top: 112px;
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 13px;
@@ -61,7 +61,7 @@ export const StyledSection4 = styled.section`
         color: #495057;
       }
       p{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -77,7 +77,7 @@ export const StyledSection4 = styled.section`
     .footer-address{
        padding-top: 77px;
       span{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 13px;
@@ -87,7 +87,7 @@ export const StyledSection4 = styled.section`
         color: #495057;
       }
       p{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;

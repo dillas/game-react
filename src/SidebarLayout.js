@@ -211,7 +211,7 @@ p{
 }
 `
 
-const DefaultLayout = ({
+const SidebarLayout = ({
   component: Component,
   ...rest
 }) => {
@@ -221,7 +221,11 @@ const DefaultLayout = ({
     <Route {...rest} render={matchProps => (
       <div className="App">
         <div className='container-content'>
+
           <Component {...matchProps} {...rest} />
+          <div className="sidebar">
+            sidebar
+          </div>
         </div>
         <StyledSection3>
           <StyledContainer>
@@ -285,4 +289,4 @@ const DefaultLayout = ({
   );
 }
 
-export default DefaultLayout;
+export default SidebarLayout;

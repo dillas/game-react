@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import { StyledHeaderContainer } from './stylesSC/scStyledContainers'
 import { Link } from 'react-router-dom'
 import logo from './logo-horis-small.svg'
+import SidebarLayout from './SidebarLayout'
 
 const MainNavigation = styled.div`
   box-sizing: border-box;
@@ -39,7 +40,7 @@ const StyledNavBlock = styled.ul`
     
     a {
       position: relative;
-      font-family: 'Roboto';
+      font-family: 'Roboto', sans-serif;
       color: #FBFCFD;
       text-decoration: none;
       text-transform: uppercase;
@@ -70,11 +71,11 @@ const StyledNavBlock = styled.ul`
       }
       
       ::before {
-        left: 0px;
+        left: 0;
       }
       ::after {
         transform: rotate(180deg);
-        right: 0px;
+        right: 0;
       }
     }
   }
@@ -226,6 +227,13 @@ function App() {
         games={games}
         filterBy={filterBy}
         setFilterBy={setFilterBy}
+      />
+
+      <SidebarLayout path="/gamesss/"
+                     component={GamesAll}
+                     games={games}
+                     filterBy={filterBy}
+                     setFilterBy={setFilterBy}
       />
       {/*<Route path="/games/" render={(props) => <GamesAll {...props} games={games} filterBy={filterBy} setFilterBy={setFilterBy}/> }  />*/}
       {/*<Route path="/users/" component={Landing} />*/}

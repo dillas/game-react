@@ -11,7 +11,7 @@ justify-content: center;
 align-items: center;
 h1{
 
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -48,11 +48,11 @@ const ButtonPlus = styled.a`
   }
   
   ::before {
-    left: 0px;
+    left: 0;
   }
   ::after {
     transform: rotate(180deg);
-    right: 0px;
+    right: 0;
   }
 `
 
@@ -98,7 +98,7 @@ align-items: center;
 }
 
 h2{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -116,7 +116,7 @@ h2{
   top: 32px;
   background: #C84A48;
   color: #FBFCFD;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -128,7 +128,7 @@ h2{
 }
 
 p{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -140,7 +140,7 @@ p{
 
 a{
   display: block;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
@@ -222,7 +222,7 @@ export const FilterButton = styled.button`
   border: none;
   padding: 8px 32px;
   margin: 16px 8px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Button1 = styled.button`
   display: block;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;

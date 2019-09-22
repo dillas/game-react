@@ -28,7 +28,7 @@ const SliderText = styled.span`
 
 const Button1 = styled.button`
   display: block;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
@@ -51,7 +51,7 @@ const Button2 = styled.button`
   border: none;
   padding: 8px 32px;
   margin: 16px auto;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
@@ -69,7 +69,7 @@ const Button3 = styled.button`
   color: #495057;
   border: none;
   padding: 8px 32px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
@@ -94,11 +94,11 @@ const Button3 = styled.button`
   }
   
   ::before {
-    left: 0px;
+    left: 0;
   }
   ::after {
     transform: rotate(180deg);
-    right: 0px;
+    right: 0;
   }
 `
 
@@ -177,7 +177,7 @@ const StyledSection4 = styled.section`
       padding-top: 77px;
       span{
         margin-top: 112px;
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 13px;
@@ -187,7 +187,7 @@ const StyledSection4 = styled.section`
         color: #495057;
       }
       p{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -203,7 +203,7 @@ const StyledSection4 = styled.section`
     .footer-address{
        padding-top: 77px;
       span{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 13px;
@@ -213,7 +213,7 @@ const StyledSection4 = styled.section`
         color: #495057;
       }
       p{
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -405,7 +405,7 @@ a.gc-small {
 
 a {
   padding: 10px 32px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 34px;
@@ -428,12 +428,12 @@ a {
   }
   
   ::before {
-    left: 0px;
+    left: 0;
   }
   
   ::after {
     transform: rotate(180deg);
-    right: 0px;
+    right: 0;
   }
 }
 `
@@ -450,7 +450,7 @@ text-align: center;
 
 .header-big{
   display: inline-block;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 60px;
@@ -463,7 +463,7 @@ text-align: center;
 .header-small{
   display: block;
   padding-top: 10px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -477,7 +477,7 @@ text-align: center;
 
 p{
   padding: 0 14vw;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -504,7 +504,7 @@ const StyledNavBlock = styled.ul`
     
     a {
       position: relative;
-      font-family: 'Roboto';
+      font-family: 'Roboto', sans-serif;
       color: #FBFCFD;
       text-decoration: none;
       text-transform: uppercase;
@@ -535,11 +535,11 @@ const StyledNavBlock = styled.ul`
       }
       
       ::before {
-        left: 0px;
+        left: 0;
       }
       ::after {
         transform: rotate(180deg);
-        right: 0px;
+        right: 0;
       }
     }
   }
@@ -559,7 +559,7 @@ const StyledFooterNavBlock = styled.ul`
     
     a {
       position: relative;
-      font-family: 'Roboto';
+      font-family: 'Roboto', sans-serif;
       color: #FBFCFD;
       text-decoration: none;
       text-transform: uppercase;
@@ -590,11 +590,11 @@ const StyledFooterNavBlock = styled.ul`
       }
       
       ::before {
-        left: 0px;
+        left: 0;
       }
       ::after {
         transform: rotate(180deg);
-        right: 0px;
+        right: 0;
       }
     }
   }
@@ -608,7 +608,7 @@ const StyledFooterCoryrightBlock = styled.div`
   justify-content: space-between;
   align-items: baseline;
   .copyright{
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -622,7 +622,7 @@ const StyledFooterCoryrightBlock = styled.div`
     
     a {
       position: relative;
-      font-family: 'Roboto';
+      font-family: 'Roboto', sans-serif;
       color: #495057;
       text-decoration: none;
       text-transform: uppercase;
@@ -659,11 +659,11 @@ const StyledFooterCoryrightBlock = styled.div`
       }
       
       ::before {
-        left: 0px;
+        left: 0;
       }
       ::after {
         transform: rotate(180deg);
-        right: 0px;
+        right: 0;
       }
     }
   }
@@ -743,7 +743,7 @@ background: url("bg-game-slider.png") bottom right no-repeat;
 .header-small{
   display: block;
   padding: 10px 0 0 24px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -756,7 +756,7 @@ background: url("bg-game-slider.png") bottom right no-repeat;
 }
 
 .header-game{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -767,7 +767,7 @@ background: url("bg-game-slider.png") bottom right no-repeat;
 }
 
 p{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -784,7 +784,7 @@ ul{
   li{
     list-style: none;
     padding-left: 32px;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -898,7 +898,7 @@ width: 30%;
     top: 32px;
     background: #C84A48;
     color: #FBFCFD;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
@@ -911,7 +911,7 @@ width: 30%;
   .post-date {
     padding-right: 24px;
     bottom: 32px;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
@@ -932,7 +932,7 @@ a {
 }
 
 .post-title{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -959,7 +959,7 @@ const PostCard = props => {
 
 const NewsBlock = styled.div`
 .header-news{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -981,7 +981,7 @@ const PartnersBlock = styled.div`
 text-align: center;
 margin-top: -45px;
 .header-partners{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 34px;
@@ -1001,7 +1001,7 @@ margin-top: -45px;
 .header-small{
   display: block;
   padding-top: 10px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -1015,7 +1015,7 @@ margin-top: -45px;
 
 
 .header-news{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -1043,7 +1043,7 @@ const OfferBlock = styled.div`
 text-align: center;
 .offer-title {
   padding: 4px 32px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -1068,16 +1068,16 @@ text-align: center;
   }
   
   ::before {
-    left: 0px;
+    left: 0;
   }
   
   ::after {
     transform: rotate(180deg);
-    right: 0px;
+    right: 0;
   }
 }
 p{
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
