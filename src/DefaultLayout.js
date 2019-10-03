@@ -2,10 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactMapGL from 'react-map-gl'
 import Icon from './social-icons'
-import { Route } from 'react-router-dom'
+import { Link, NavLink, Route } from 'react-router-dom'
 import { StyledSection3, StyledSection4 } from './stylesSC/scStyledSection'
 import { Button1 } from './stylesSC/scButtons'
-import { StyledContainer } from './stylesSC/scStyledContainers'
+import {
+  StyledContainer,
+  StyledHeaderContainer,
+} from './stylesSC/scStyledContainers'
+import { GlobalStyle } from './stylesSC/scGlobalStyles'
+import logo from './logo-horis-small.svg'
+import OrderModal from './OrderModal'
+import Navigation from './Navigation'
+import MainHeader from './MainHeader'
+
+
+
+
 
 const StyledFooterNavBlock = styled.ul`
     border-top: 1px solid rgba(255,255,255,.1);
@@ -212,58 +224,75 @@ p{
 `
 
 const DefaultLayout = ({
-  component: Component,
-  ...rest
-}) => {
-  const { openModal, withMap } = rest
+                         component: Component,
+                         sidebar,
+                         ...rest }) => {
+  const {withSidebar, withMap, setModalIsShow, modalIsShow, navIsShow, setNavIsShow } = rest
+
+  const openModal = () => setModalIsShow(!modalIsShow)
+  const closeModal = () => setModalIsShow(!modalIsShow)
 
   return (
     <Route {...rest} render={matchProps => (
-      <div className="App">
-        <div className='container-content'>
-          <Component {...matchProps} {...rest} />
+      <div className='App'>
+        <GlobalStyle/>
+        <OrderModal modalIsShow={modalIsShow} closeModal={closeModal} />
+        <Navigation/>
+        <MainHeader navIsShow={navIsShow} setNavIsShow={setNavIsShow}/>
+        <div className="content-container" style={{display: 'flex'}}>
+          <div className="content">
+
+              <Component {...matchProps} {...rest} />
+
+          </div>
+            <div className="sidebar">
+              sidebar
+              {sidebar}
+            </div>
         </div>
         <StyledSection3>
           <StyledContainer>
             <OfferBlock>
               <div className='offer-title'>Закажи свою игру</div>
-              <p>Наши менеджеры обязательно помогут Вам реализовать лучшие мероприятия в Бункере-42</p>
+              <p>Наши менеджеры обязательно помогут Вам реализовать лучшие
+                мероприятия в Бункере-42</p>
               <Button1 onClick={() => openModal()}>Заказать игру</Button1>
             </OfferBlock>
           </StyledContainer>
         </StyledSection3>
 
         {withMap &&
-          <ReactMapGL
-            mapboxApiAccessToken='pk.eyJ1IjoiZGlsbGFzIiwiYSI6ImNrMGI5NXd1MDBwbGkzaXBqaXV3YWY2NWsifQ.FmWw6nnOWCYBYfpW704f2A'
-            width='100%'
-            height={500}
-            mapStyle="mapbox://styles/dillas/ck0b96roj3ffi1clr1qt8gul8"
-            latitude={55.742}
-            longitude={37.652}
-            zoom={16}
-            //onViewportChange={(viewport) => {
-              // const {width, height, latitude, longitude, zoom} = viewport;
-              // Optionally call `setState` and use the state to update the map.
-            //}}
-          />
+        <ReactMapGL
+          mapboxApiAccessToken='pk.eyJ1IjoiZGlsbGFzIiwiYSI6ImNrMGI5NXd1MDBwbGkzaXBqaXV3YWY2NWsifQ.FmWw6nnOWCYBYfpW704f2A'
+          width='100%'
+          height={500}
+          mapStyle="mapbox://styles/dillas/ck0b96roj3ffi1clr1qt8gul8"
+          latitude={55.742}
+          longitude={37.652}
+          zoom={16}
+          //onViewportChange={(viewport) => {
+          // const {width, height, latitude, longitude, zoom} = viewport;
+          // Optionally call `setState` and use the state to update the map.
+          //}}
+        />
         }
 
         <StyledSection4>
-            <StyledFooterNavBlock>
-                <li><a className='active' href="/" title="item">Главная</a></li>
-                <li><a href="/" title="item">О нас</a></li>
-                <li><a href="/" title="item">Контакты</a></li>
-                <li><a href="/" title="item">Новости</a></li>
-                <li><a href="/" title="item">Галерея</a></li>
-                <li><a href="/" title="item">Правила</a></li>
-            </StyledFooterNavBlock>
+          <StyledFooterNavBlock>
+            <li><a className='active' href="/" title="item">Главная</a></li>
+            <li><a href="/" title="item">О нас</a></li>
+            <li><a href="/" title="item">Контакты</a></li>
+            <li><a href="/" title="item">Новости</a></li>
+            <li><a href="/" title="item">Галерея</a></li>
+            <li><a href="/" title="item">Правила</a></li>
+          </StyledFooterNavBlock>
           <div className='footer-contacts'>
             <div className='footer-phone'>
               <span>Контакты</span>
               <p>game@bunker42.com<br/>+7 499 7030077</p>
             </div>
-            <div className='footer-logo'><img src="logo-big-vert.png" alt="logo-big-vert.png"/></div>
+            <div className='footer-logo'><img src="logo-big-vert.png"
+                                              alt="logo-big-vert.png"/></div>
             <div className='footer-address'>
               <span>Адрес</span>
               <p>115172, г. Москва,<br/>5-й Котельнический переулок, д.11</p>
@@ -272,17 +301,17 @@ const DefaultLayout = ({
           <StyledFooterCopyrightBlock>
             <div className='copyright'>© “Бункер-42 на Таганке”, 2019</div>
             <StyledSocialFooterNavBlock>
-              <li><a href="/" title="item"><Icon icon='vk' /></a></li>
-              <li><a href="/" title="item"><Icon icon='fb' /></a></li>
-              <li><a href="/" title="item"><Icon icon='yt' /></a></li>
-              <li><a href="/" title="item"><Icon icon='tw' /></a></li>
-              <li><a href="/" title="item"><Icon icon='ok' /></a></li>
+              <li><a href="/" title="item"><Icon icon='vk'/></a></li>
+              <li><a href="/" title="item"><Icon icon='fb'/></a></li>
+              <li><a href="/" title="item"><Icon icon='yt'/></a></li>
+              <li><a href="/" title="item"><Icon icon='tw'/></a></li>
+              <li><a href="/" title="item"><Icon icon='ok'/></a></li>
             </StyledSocialFooterNavBlock>
           </StyledFooterCopyrightBlock>
         </StyledSection4>
       </div>
-    )} />
-  );
+    )}/>
+  )
 }
 
-export default DefaultLayout;
+export default DefaultLayout

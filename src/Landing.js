@@ -138,6 +138,9 @@ height: 250px;
 background: cadetblue url("bg-category/${props => props.img}.png") center no-repeat;
 background-size: cover;
 margin: 0 16px 16px 0;
+@media (max-width: 768px) {
+    min-width: calc(38vw - 16px);
+  }
 
 div{
 
@@ -402,12 +405,13 @@ const SamplePrevArrow = props => {
 
 const StyledPostCard = styled.div`
 width: 30%;
+margin-bottom: 32px;
 .post-image{
   background: url(${props => (props.img)}) center no-repeat;
   background-size: cover;
   height: 300px;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   
   .post-cat, .post-date {
     position: absolute;
@@ -455,7 +459,7 @@ a {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 32px;
   text-align: center;
   color: #212429;
@@ -472,7 +476,7 @@ const PostCard = props => {
         <div className='post-cat'>{cat}</div>
         <div className='post-date'>{date}</div>
       </div>
-      <a href="/"><span className='post-title'>{name}</span></a>
+      <a className='post-title' href="/">{name}</a>
     </StyledPostCard>
   )
 }
@@ -594,13 +598,12 @@ const Landing = (props) => {
     variableWidth: true
   };
 
-  const landingNews = news.slice(0, 3);
 
   const listSlides = games.map(slide =>
     <GameSlide key={slide.id} index={slide.id} slide={slide} />
   )
 
-  const listNews = landingNews.map(post =>
+  const listNews = news.reverse().map(post =>
     <PostCard key={post.id} post={post} />
   )
 
@@ -649,7 +652,7 @@ const Landing = (props) => {
         <StyledContainer>
           <NewsBlock>
             <span className='header-news'>Новости</span>
-            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '46px'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '46px', flexWrap: 'wrap'}}>
               {listNews}
             </div>
             <Button2>Еще новости</Button2>

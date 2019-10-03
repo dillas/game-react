@@ -221,8 +221,9 @@ const SidebarLayout = ({
     <Route {...rest} render={matchProps => (
       <div className="App">
         <div className='container-content'>
-
-          <Component {...matchProps} {...rest} />
+          <div className="content">
+            <Component {...matchProps} {...rest} />
+          </div>
           <div className="sidebar">
             sidebar
           </div>

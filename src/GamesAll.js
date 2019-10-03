@@ -1,25 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { StyledSection } from './Landing'
 
-const StyledHead1 = styled.div`
-background: url("bg-headers/01.jpg") center no-repeat;
-background-size: cover;
-height: 30vh;
-display: flex;
-justify-content: center;
-align-items: center;
-h1{
 
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
-  color: #FBFCFD;
-  margin: 0;
-}
-`
 
 const ButtonPlus = styled.a`
     position: relative;
@@ -192,8 +175,8 @@ a{
 }
 `
 
-const GameSingle = (props) => {
-  const { id, image, name, cat, text, count, age, time} = props.game
+const GameSingle = ({game}) => {
+  const { id, image, name, cat, text} = game
   return(
     <StyledGameSingle image={image}>
       <div className="game-image">
@@ -212,7 +195,6 @@ const GameSingle = (props) => {
     </StyledGameSingle>
   )
 }
-{/*<span>{count}</span><span>{age}</span><span>{time}</span>*/}
 
 
 export const FilterButton = styled.button`
@@ -234,15 +216,16 @@ export const FilterButton = styled.button`
 `
 
 const GameFilter = props => {
+  const { setFilterBy } = props
   console.log(props)
   return(
     <div style={{display: 'flex', justifyContent: 'center', padding: '32px 0'}}>
-      <FilterButton onClick={() => props.setFilterBy("")} >Все</FilterButton>
-      <FilterButton onClick={() => props.setFilterBy("Страйкбол")} >Страйкбол</FilterButton>
-      <FilterButton onClick={() => props.setFilterBy("Лазертаг")} >Лазертаг</FilterButton>
-      <FilterButton onClick={() => props.setFilterBy("Фаертаг")} >Фаертаг</FilterButton>
-      <FilterButton onClick={() => props.setFilterBy("Тимбилдинг")} >Тимбилдинг</FilterButton>
-      <FilterButton onClick={() => props.setFilterBy("Интерактивные игры детские мероприятия")} >Интерактивные игры детские мероприятия</FilterButton>
+      <FilterButton onClick={() => setFilterBy("")} >Все</FilterButton>
+      <FilterButton onClick={() => setFilterBy("Страйкбол")} >Страйкбол</FilterButton>
+      <FilterButton onClick={() => setFilterBy("Лазертаг")} >Лазертаг</FilterButton>
+      <FilterButton onClick={() => setFilterBy("Фаертаг")} >Фаертаг</FilterButton>
+      <FilterButton onClick={() => setFilterBy("Тимбилдинг")} >Тимбилдинг</FilterButton>
+      <FilterButton onClick={() => setFilterBy("Интерактивные игры детские мероприятия")} >Интерактивные игры детские мероприятия</FilterButton>
     </div>
   )
 }
@@ -264,9 +247,6 @@ const GamesAll = ({games, filterBy, setFilterBy}) => {
 
   return(
     <div>
-      <StyledHead1>
-          <h1>Игры</h1>
-      </StyledHead1>
       <StyledSection>
         <GameFilter setFilterBy={setFilterBy} />
         <StyledGameSection>
