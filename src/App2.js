@@ -1178,7 +1178,7 @@ function App() {
           <a href="javascript:void(0);" onClick={() => closeModal()}>Close</a>
         </div>
       </Modal>
-      <MainNavigation navIsShow={navIsShow}>
+      <MainNavigation navIsShow>
         <StyledNavBlock>
           <li><a className='active' href="/" title="item">Главная</a></li>
           <li><a href="/" title="item">О нас</a></li>
@@ -1201,7 +1201,7 @@ function App() {
           <li><a href="/" title="item"><Icon icon='ok' /></a></li>
         </StyledSocialNavBlock>
       </MainNavigation>
-      <MainHeader navIsShow={navIsShow} setNavIsShow = {setNavIsShow}/>
+      <MainHeader navIsShow={navIsShow} setNavIsShow={setNavIsShow}/>
       <div style={{position: 'relative'}}>
         <CoverExample />
         {/*<div style={{

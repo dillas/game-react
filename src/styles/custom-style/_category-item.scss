@@ -1,0 +1,154 @@
+.category-card {
+  cursor: pointer;
+  //width: 340px;
+  //height: 200px;
+  width: 100%;
+  height: 100px;
+  //@include breakpoint(xs) {height: 100px;}
+  @include breakpoint(sm) {height: 150px;}
+  @include breakpoint(md) {height: 200px;}
+  @include breakpoint(lg) {height: 250px;}
+  @include breakpoint(xl) {height: 300px;}
+  position: relative;
+}
+.category-card__front, .category-card__back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .4s linear;
+  background: center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card__front img{
+  height: 100%;
+}
+
+.category-card__front{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.category-card__back{
+  transform: perspective(600px) rotateY(180deg);
+
+  & .category-card__img-overlay {
+    background: url("../../images-assets/hover_img.png") center;
+    background-size: 130% auto;
+  }
+
+  .category-card__title {
+    &::before, &::after {
+      background: url("../../images-assets/BracketSmallWhite.svg") no-repeat;
+      @include breakpoint(md) {
+        background: url("../../images-assets/BracketLargeWhite.svg") no-repeat;
+        height: 64px;
+      }
+    }
+  }
+}
+
+.category-card__title {
+  text-decoration: none;
+  font-size: var(--text-md);
+  z-index: var(--zindex-header);
+  text-align: center;
+
+  color: var(--color-white);
+  font-weight: bold;
+  padding: 0 var(--space-sm);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  //margin-bottom: var(--space-xs);
+  @include breakpoint(md) {
+    line-height: 1.75;
+  }
+
+  &--sm {
+
+    padding: 0 var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("../../images-assets/BracketSmallAccent.svg") no-repeat;
+    @include breakpoint(md) {
+      background: url("../../images-assets/BracketLargeAccent.svg") no-repeat;
+      height: 64px;
+    }
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    transform: translateY(-50%) rotate(180deg);
+    right: 0;
+  }
+}
+
+.category-card__img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+}
+
+.back-content{
+  color: #2c3e50;
+  text-align: center;
+  width: 100%;
+}
+
+.sm{
+  margin: 20px 0;
+}
+.sm a{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 18px;
+  transition: 0.4s;
+  border-radius: 50%
+}
+.sm a:hover{
+  background: #2c3e50;
+  color: white;
+}
+.category-card:hover > .category-card__front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.category-card:hover > .category-card__back{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+// Create a grid
+.parent {
+  justify-content: center;
+}
+
+.category-section__main-header {
+  padding: var(--space-xs) var(--space-xs);
+  font-weight: bold;
+  @include breakpoint(sm) {
+    padding: var(--space-xs) var(--space-lg);
+  }
+}

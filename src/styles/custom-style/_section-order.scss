@@ -1,0 +1,48 @@
+.section-order {
+  background: #C84A48 url("../../images-assets/bg-accent.jpg") center no-repeat;
+}
+
+.section-order__container {}
+
+.section-order__title {
+  color: var(--color-white);
+  font-weight: bold;
+  line-height: 2.4;
+  padding: 0 var(--space-sm);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+  @include breakpoint(md) {
+    line-height: 1.75;
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 64px;
+    top: 0;
+    background: url("../../images-assets/BracketLargeDark.svg") no-repeat;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    transform: rotate(180deg);
+    right: 0;
+  }
+}
+
+.section-order__description {
+  margin: 0 auto var(--space-md);
+  color: var(--color-white);
+  max-width: var(--max-width-xxxs);
+  font-size: var(--text-sm);
+
+}
+
+.section-order__btn {}

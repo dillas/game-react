@@ -1,0 +1,61 @@
+.game-slider-item {
+  & ul {
+    margin-bottom: var(--space-lg);
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding-left: 30px;
+      font-weight: 500;
+      margin-bottom: var(--space-sm);
+      background: url("../../images-assets/Success2.png") left center no-repeat;
+
+      span {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.game-slider-item__cat {
+  margin-bottom: var(--space-lg);
+}
+
+.game-slider-item__image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 90vh;
+}
+
+.game-slider-item__title {
+  font-weight: bold;
+  font-size: var(--text-xxl);
+  color: var(--color-dark);
+  text-decoration: none;
+  margin-bottom: var(--space-xs);
+  display: inline-block;
+}
+
+.game-slider-item__description {
+  padding: var(--space-lg) var(--space-xl) var(--space-lg) var(--space-lg);
+  display: flex;
+  align-items: center;
+  background: var(--color-contrast-low) url("../../images-assets/bg-game-slider.png") bottom right no-repeat;
+}
+
+.game-slider-item__arrow {
+  top: 25%;
+
+  @include breakpoint(sm) {
+    top: 50%;
+  }
+
+  &--prev {
+    left: var(--space-xs);
+  }
+
+  &--next {
+    right: var(--space-xs);
+  }
+}

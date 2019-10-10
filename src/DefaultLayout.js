@@ -236,7 +236,7 @@ const DefaultLayout = ({
     <Route {...rest} render={matchProps => (
       <div className='App'>
         <GlobalStyle/>
-        <OrderModal modalIsShow={modalIsShow} closeModal={closeModal} />
+        <OrderModal modalIsShow closeModal={closeModal} />
         <Navigation/>
         <MainHeader navIsShow={navIsShow} setNavIsShow={setNavIsShow}/>
         <div className="content-container" style={{display: 'flex'}}>

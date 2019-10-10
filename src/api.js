@@ -197,11 +197,11 @@ export function findGame(id) {
 }
 
 const gameCategory = [
-  { id: 1, name: 'Страйкбол'},
-  { id: 2, name: 'Лазертаг'},
-  { id: 3, name: 'Фаертаг'},
-  { id: 4, name: 'Тимбилдинг'},
-  { id: 5, name: 'Интерактивные игры, детские мероприятия'},
+  { id: 1, name: 'Страйкбол', image: 'bg-category/01.png' },
+  { id: 2, name: 'Лазертаг', image: 'bg-category/02.png' },
+  { id: 3, name: 'Фаертаг', image: 'bg-category/03.png' },
+  { id: 4, name: 'Тимбилдинг', image: 'bg-category/04.png' },
+  { id: 5, name: 'Интерактивные игры детские мероприятия', image: 'bg-category/05.png' },
 ]
 
 export function getGameCategories() {

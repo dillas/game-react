@@ -1,32 +1,29 @@
-import React from 'react'
-import { getGameCategories, getGames } from './api'
+import React, {useEffect} from 'react'
+import { getGames } from './api'
 import { Link } from 'react-router-dom'
+
 import NewOrderSection from './NewOrderSection'
 import NewGameCard from './NewGameCard'
+import NewGameFilter from './NewGameFilter'
 
-const NewGamesPage = props => {
-  const {setModalIsShow, modalIsShow, gamesFilter, setGamesFilter} = props
+const NewGamesPage = ({setModalIsShow, modalIsShow, gamesFilter, setGamesFilter}) => {
   const games = getGames(null, gamesFilter)
+
+  //clear filter on componentWillUnmount
+  useEffect(() => () => {setGamesFilter(null)}, [setGamesFilter])
+
   return (
     <div>
-      <header><h1>Игры</h1></header>
-      <p><Link to='/' >Главная</Link> / Игры</p>
-      <hr/>
+      <header>
+        <h1>Игры</h1>
+        <p><Link to='/' >Главная</Link> / Игры</p>
+      </header>
       <div style={{display: 'flex'}}>
         <div>
-          <h3>Категории</h3>
-          <Link style={{display: 'inline-block'}} key='0' to='/games'>
-            <div onClick={() => setGamesFilter(null)}>Все </div>
-          </Link>
-          {getGameCategories().map(cat =>
-            <Link style={{display: 'inline-block'}} key={cat.id} to='/games'>
-              <div onClick={() => setGamesFilter(cat.id)}>{cat.name}</div>
-            </Link>)}
-          <hr/>
+          <NewGameFilter setGamesFilter={setGamesFilter}/>
           {games.map(game => <NewGameCard key={game.id} game={game}/>)}
         </div>
       </div>
-      <hr/>
       <NewOrderSection setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} />
     </div>
   )

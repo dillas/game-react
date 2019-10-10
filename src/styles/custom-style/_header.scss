@@ -1,0 +1,205 @@
+/* --------------------------------
+
+File#: _1_header
+Title: Main Header
+Descr: Accessible website navigation
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --header-height: 50px;
+  --nav-pl: calc(-0.75 * var(--space-unit));
+
+  @include breakpoint(md) {
+    --header-height: 70px;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: transparent;
+  z-index: var(--zindex-fixed-element);
+
+  &--dark {
+    background-color: var(--color-black);
+  }
+
+  &--active {
+    visibility: visible;
+    transition: all 200ms ease-in;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
+  }
+}
+
+.header__container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__navigation {
+  padding-top: var(--header-height);
+  position: absolute;
+  right: var(--nav-pl);
+  top: 0;
+  z-index: var(--zindex-header);
+}
+
+.header__button {
+  background-color: var(--color-accent-dark);
+}
+
+.navigation {
+  height: 100%;
+  width: var(--max-width-xxxxs);
+  background-color: var(--color-accent);
+
+  &__list {
+    border-top: 1px solid var(--color-accent-light);
+    margin: 0;
+    padding: var(--component-padding);
+
+    &--main {
+      background: url('../../images-assets/bg-star-1.png') bottom right no-repeat;
+    }
+
+    &--second {
+      background: url('../../images-assets/bg-star-2.png') top left no-repeat;
+    }
+
+    &--button {
+      padding: var(--space-sm) var(--component-padding);
+    }
+
+    &--social {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      padding: var(--space-sm) var(--component-padding);
+
+    }
+  }
+
+  &__item {
+    list-style: none;
+    text-align: center;
+    margin-bottom: var(--space-xxs);
+
+    & a {
+      position: relative;
+      color: var(--color-white);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      font-size: var(--text-xs, 1em);
+      padding: 9px var(--space-md);
+      letter-spacing: 0.75px;
+
+      &:hover {
+        background: var(--color-accent-dark);
+      }
+    }
+
+    & a.active {
+      &::before, &::after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 32px;
+        top: 0;
+        background: url("../../images-assets/BracketSmall.svg") no-repeat;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        transform: rotate(180deg);
+        right: 0;
+      }
+    }
+  }
+
+  &__social {
+    color: var(--color-white);
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    padding: 20px;
+    box-shadow: none;
+
+    &:hover {
+      background-color: var(--color-accent-dark);
+    }
+  }
+}
+
+
+// logo
+.header__logo {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 40px;
+  overflow: hidden;
+
+  & a, & svg, & img {
+    display: block;
+    width: 169px;
+  }
+}
+
+
+.header__right {
+  display: flex;
+  align-items: center;
+  z-index: var(--zindex-popover);
+}
+
+.header__phone {
+  margin-right: var(--space-md);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+
+  :hover {
+    & a {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@include breakpoint(md) {
+  .header__right {
+    font-size: 0.875em; // controls the font-size of all elements (md)
+  }
+}
+
+@include breakpoint(xs) {
+  .header__logo {
+    position: relative;
+    z-index: 2;
+    //flex-shrink: 0;
+    width: 169px;
+
+    a, svg, img {
+      display: block;
+    }
+  }
+
+}

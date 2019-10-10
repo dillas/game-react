@@ -553,7 +553,7 @@ function Layout() {
           <a href="/" onClick={() => closeModal()}>Close</a>
         </div>
       </Modal>
-      <MainNavigation navIsShow={navIsShow}>
+      <MainNavigation navIsShow>
         <StyledNavBlock>
           <li><a className='active' href="/" title="item">Главная</a></li>
           <li><a href="/" title="item">О нас</a></li>

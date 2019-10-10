@@ -4,7 +4,7 @@ import { getGames, getPosts } from './api'
 import { CONFIG } from './config'
 import NewOrderSection from './NewOrderSection'
 
-const NewAbout = props => {
+const NewAboutPage = props => {
   const {setModalIsShow, modalIsShow } = props
   return (
     <div>
@@ -52,4 +52,4 @@ const NewAbout = props => {
   )
 }
 
-export default NewAbout
+export default NewAboutPage

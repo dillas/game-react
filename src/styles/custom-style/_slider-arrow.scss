@@ -1,0 +1,11 @@
+.slider-arrow {
+  z-index: var(--zindex-header);
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: var(--space-lg);
+  height: var(--space-xxl);
+  background: rgba(33, 36, 41, .9);
+  transform: translate(0, -50%)
+}

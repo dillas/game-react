@@ -1,0 +1,41 @@
+.navigation-wrapper{
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation-wrapper__container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation {
+  height: 100vh;
+  width: var(--max-width-xxxxs);
+  background-color: var(--color-accent);
+
+  &--dark {
+    background-color: var(--color-black);
+  }
+
+  &--active {
+    visibility: visible;
+    transition: all 200ms ease-in;
+  }
+  &--hidden {
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
+  }
+}
+
+.navigation__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

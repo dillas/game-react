@@ -54,7 +54,7 @@ function  NewSinglePostPage(props){
         </aside>
       </div>
       <hr/>
-      <NewOrderSection setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} />
+      <NewOrderSection setModalIsShow={setModalIsShow} modalIsShow />
     </div>
   )
 }

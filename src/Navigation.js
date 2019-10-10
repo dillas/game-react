@@ -103,7 +103,7 @@ const StyledNavBlock = styled.ul`
 const Navigation = props => {
   const {navIsShow, openModal} = props
   return (
-    <MainNavigation navIsShow={navIsShow}>
+    <MainNavigation navIsShow>
       <StyledNavBlock>
         <li><NavLink to="/">Главная</NavLink></li>
         <li><NavLink to="/about">О нас</NavLink></li>

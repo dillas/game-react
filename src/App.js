@@ -23,9 +23,9 @@ function App () {
                      news={getPosts(3)}
                      games={getGames()}
 
-                     navIsShow={navIsShow}
+                     navIsShow
                      setNavIsShow={setNavIsShow}
-                     modalIsShow={modalIsShow}
+                     modalIsShow
                      setModalIsShow={setModalIsShow}
                      filterBy={filterBy}
                      setFilterBy={setFilterBy}
@@ -38,9 +38,9 @@ function App () {
                      sibebar={Sidebar}
                      games={getGames()}
 
-                     navIsShow={navIsShow}
+                     navIsShow
                      setNavIsShow={setNavIsShow}
-                     modalIsShow={modalIsShow}
+                     modalIsShow
                      setModalIsShow={setModalIsShow}
                      filterBy={filterBy}
                      setFilterBy={setFilterBy}
