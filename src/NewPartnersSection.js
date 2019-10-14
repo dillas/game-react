@@ -1,20 +1,18 @@
 import React from 'react'
 import PartnerSlider from 'react-slick/lib'
-import { partnerSliderSettings } from './config'
+import { partnerSliderSettings, partners } from './config'
 
 const NewPartnersSection = () => {
   return (
-    <section>
-      <h2>Наши партнеры</h2>
-      <PartnerSlider {...partnerSliderSettings}>
-        <div><img src="partners-logo/01.png" alt="jpg"/></div>
-        <div><img src="partners-logo/02.png" alt="jpg"/></div>
-        <div><img src="partners-logo/03.png" alt="jpg"/></div>
-        <div><img src="partners-logo/04.png" alt="jpg"/></div>
-        <div><img src="partners-logo/05.png" alt="jpg"/></div>
-        <div><img src="partners-logo/06.png" alt="jpg"/></div>
-      </PartnerSlider>
-      <hr/>
+    <section className='section-divider'>
+      <div className='container max-width-lg padding-top-md padding-bottom-lg'>
+        <h4 className='header-star margin-bottom-sm header-star--left-star partner-header '>Наши партнеры</h4>
+        <PartnerSlider {...partnerSliderSettings}>
+          {partners.map(partner =>
+            <div key={partner.id} className='partner-slider-item'><img src={partner.link} alt="jpg"/></div>
+          )}
+        </PartnerSlider>
+      </div>
     </section>
   )
 }

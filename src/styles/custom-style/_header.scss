@@ -58,16 +58,16 @@ Usage: codyhouse.co/license
 }
 
 .header__button {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .navigation {
   height: 100%;
   width: var(--max-width-xxxxs);
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
 
   &__list {
-    border-top: 1px solid var(--color-accent-light);
+    border-top: 1px solid var(--color-primary-light);
     margin: 0;
     padding: var(--component-padding);
 
@@ -109,7 +109,7 @@ Usage: codyhouse.co/license
       letter-spacing: 0.75px;
 
       &:hover {
-        background: var(--color-accent-dark);
+        background: var(--color-primary-dark);
       }
     }
 
@@ -143,7 +143,7 @@ Usage: codyhouse.co/license
     box-shadow: none;
 
     &:hover {
-      background-color: var(--color-accent-dark);
+      background-color: var(--color-primary-dark);
     }
   }
 }

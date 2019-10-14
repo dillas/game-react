@@ -11,52 +11,71 @@ Usage: codyhouse.co/license
   background-color: var(--color-black);
 }
 
-.main-footer__content {
-  @include breakpoint(md) { // align logo + nav
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
 .main-footer__logo {
+  justify-content: center;
   flex-shrink: 0;
   margin-bottom: var(--space-md);
 
   a, svg, img {
     display: block;
+    margin: 0 auto;
   }
 }
 
-.main-footer__nav {
+.main-footer__content {
+  text-align: center;
+  padding: var(--space-md);
+
+  @include breakpoint(sm) { // align logo + nav
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.main-footer__content-item {
+  margin: 0 auto var(--space-md);
+  text-align: center;
+
+  &--contacts {
+
+    @include breakpoint(sm) {
+      padding-top: var(--space-xxl);
+      text-align: right;
+      order: 1;
+    }
+
+    @include breakpoint(md) {
+      padding-top: var(--space-xl);
+      width: 280px;
+    }
+  }
+  &--logo {
+    @include breakpoint(sm) {
+      width: 280px;
+      order: 2;
+    }
+  }
+  &--address {
+    order: 3;
+
+    @include breakpoint(sm) {
+      margin: 0 auto;
+      padding-top: var(--space-xxl);
+      text-align: left;
+      width: 280px;
+    }
+
+    @include breakpoint(md) {
+      padding-top: var(--space-xl);
+    }
+  }
+
+  @include breakpoint(sm) {
+    //width: 33%;
+  }
+
   @include breakpoint(md) {
-    width: calc(100% - 420px);
-  }
-
-  @include breakpoint(lg) {
-    width: auto;
-  }
-}
-
-.main-footer__nav-list { // ul
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.main-footer__nav-item {
-  display: grid;
-  grid-gap: var(--space-xxs);
-  margin-bottom: var(--space-md);
-  width: 100%;
-  padding-right: var(--space-sm);
-
-  @include breakpoint(xs) {
-    width: 50%;
-  }
-
-  @include breakpoint(lg) {
-    grid-gap: var(--space-xs);
-    width: 240px;
+    //width: 280px;
   }
 
   & h4 {
@@ -65,19 +84,108 @@ Usage: codyhouse.co/license
     font-weight: bold;
     color: var(--color-contrast-high);
   }
+
+  & a { // footer nav link
+    font-size: 0.9em;
+    text-decoration: none;
+    padding: var(--space-md) 0;
+    line-height: 2;
+
+    color: var(--color-contrast-medium);
+
+    &:hover {
+      color: var(--color-contrast-high);
+    }
+
+    @include breakpoint(lg) {
+      //font-size: 0.9em;
+    }
+  }
 }
 
-.main-footer__nav-item a { // footer nav link
-  color: var(--color-contrast-medium);
-  text-decoration: none;
 
-  &:hover {
-    color: var(--color-contrast-high);
-  }
+.main-footer__navigation {
+  border-top: 1px solid var(--color-contrast-high);
+  border-bottom: 1px solid var(--color-contrast-high);
 
-  @include breakpoint(lg) {
-    font-size: 0.9em;
+  padding: var(--space-xxxs);
+  //margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navigation-footer {
+  &__item {
+    list-style: none;
+    text-align: center;
+
+    & a {
+      position: relative;
+      color: var(--color-white);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      font-size: var(--text-xs, 1em);
+      padding: 9px var(--space-md);
+      letter-spacing: 0.75px;
+
+      &:hover {
+        background-color: var(--color-contrast-high);
+      }
+    }
+
+    & a.active {
+      background: var(---color-primary-dark);
+    }
+
   }
+}
+
+.main-footer__second-navigation {
+  padding: var(--space-xxxs);
+  //margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.second-navigation-footer {
+  &__item {
+    list-style: none;
+    text-align: center;
+
+    & a {
+      position: relative;
+      color: var(--color-contrast-medium);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      font-size: var(--text-md, 1em);
+      padding: 9px var(--space-md);
+      letter-spacing: 0.75px;
+      transition: all ease-in-out .3s;
+
+      &:hover {
+        background: var(--color-primary-dark);
+        color: var(--color-white);
+        transition: all ease-in-out .3s;
+      }
+    }
+  }
+}
+
+.main-footer__second-navigation-header {
+  color: var(--color-primary-darken);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--text-sm, 1em);
+
 }
 
 // colophon

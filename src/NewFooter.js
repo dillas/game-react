@@ -4,10 +4,19 @@ import { Link, NavLink } from 'react-router-dom'
 
 const NewFooter = () => {
   return (
-    <footer className="main-footer padding-y-lg">
-      <div className="container max-width-lg">
-        <div className="main-footer__content">
-          <div className="main-footer__logo">
+    <footer className="section-divider section-divider--bark section-divider--no-bottom main-footer padding-y-lg">
+      <div className="container">
+
+        <ul className='main-footer__navigation navigation-footer'>
+          {CONFIG.navigation.map(link =>
+            <li className='navigation-footer__item' key={link.link}>
+              <NavLink exact={link.exact} to={link.link}>{link.name}</NavLink>
+            </li>
+          )}
+        </ul>
+
+        <div className="grid main-footer__content">
+          <div className="main-footer__content-item main-footer__content-item--logo col-12@xs col-4@sm">
             <Link to="/">
               <svg width="190" height="152" viewBox="0 0 190 152" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M55 144H57.1372V146.953H58.9904V144H61.1277V152H58.9904V148.989H57.1372V152H55V144Z"
@@ -70,37 +79,28 @@ const NewFooter = () => {
             </Link>
           </div>
 
-          <nav className="main-footer__nav">
-            <ul className="main-footer__nav-list">
-              <li className="main-footer__nav-item">
-                <h4>Навигация</h4>
-                {CONFIG.navigation.map(link =>
-                  <div key={link.link}><NavLink exact={link.exact} to={link.link}>{link.name}</NavLink></div>
-                )}
-              </li>
+          <div className="main-footer__content-item main-footer__content-item--contacts col-12@xs col-4@sm">
+            <h4>Контакты</h4>
+            <div><a href={`mailto:${CONFIG.contacts.email}`}>{CONFIG.contacts.email}</a></div>
+            <div><a href={`tel:${CONFIG.contacts.phone}`}>{CONFIG.contacts.phone}</a></div>
+          </div>
 
-              <li className="main-footer__nav-item">
-                <h4>Контакты</h4>
-                <div><a href={`mailto:${CONFIG.contacts.email}`}>{CONFIG.contacts.email}</a></div>
-                <div><a href={`tel:${CONFIG.contacts.phone}`}>{CONFIG.contacts.phone}</a></div>
-              </li>
+          <div className="main-footer__content-item main-footer__content-item--address col-12@xs col-4@sm">
+            <h4>Адрес</h4>
+            <div><a href="#0">115172, г. Москва,<br /> 5-й Котельнический переулок, д.11</a></div>
+          </div>
 
-              <li className="main-footer__nav-item">
-                <h4>Адрес</h4>
-                <div><a href="#0">{CONFIG.contacts.address}</a></div>
-              </li>
-
-              <li className="main-footer__nav-item">
-                <h4>Наши сайты</h4>
-                {CONFIG.ourSites.map(link =>
-                  <div key={link.id}>
-                    <a target='_blank' rel='noopener noreferrer' href={link.link}>{link.name}</a>
-                  </div>
-                )}
-              </li>
-            </ul>
-          </nav>
         </div>
+
+        <h4 className='main-footer__second-navigation-header'>Наши сайты</h4>
+
+        <ul className='main-footer__second-navigation second-navigation-footer'>
+          {CONFIG.ourSites.map(link =>
+            <li className='second-navigation-footer__item' key={link.id}>
+              <a target='_blank' rel='noopener noreferrer' href={link.link}>{link.name}</a>
+            </li>
+          )}
+        </ul>
 
         <div className="main-footer__colophon">
           <div className="main-footer__colophon-nav">

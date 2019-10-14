@@ -6,7 +6,16 @@ Descr: Container of information used as teaser for further content exploration
 Usage: codyhouse.co/license
 
 -------------------------------- */
-
+.single-game-page {
+  & .post-cat {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-block;
+    margin: var(--space-sm) var(--space-sm) var(--space-sm) 0;
+  }
+}
 
 .card {
   background-color: var(--color-bg);
@@ -17,7 +26,7 @@ Usage: codyhouse.co/license
   & .post-cat, & .post-date {
     position: absolute;
     left: var(--space-md);
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: var(--color-white);
     font-size: var(--text-xs);
     padding: var(--space-xs) var(--space-sm)
@@ -57,7 +66,7 @@ Usage: codyhouse.co/license
     box-shadow: var(--shadow-md);
 
     .card__content {
-      background: var(--color-accent);
+      background: var(--color-primary);
 
       & h4{
         color: var(--color-white);

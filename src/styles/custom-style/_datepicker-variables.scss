@@ -1,8 +1,8 @@
-$datepicker__background-color: var(--color-accent-light) !default;
+$datepicker__background-color: var(--color-primary-light) !default;
 $datepicker__border-color: var(--color-primary) !default;
 $datepicker__highlighted-color: #3dcc4a !default;
 $datepicker__muted-color: #ccc !default;
-$datepicker__selected-color: var(--color-accent-dark) !default;
+$datepicker__selected-color: var(--color-primary-dark) !default;
 $datepicker__text-color: var(--color-black) !default;
 $datepicker__header-color: var(--color-white) !default;
 $datepicker__navigation-disabled-color: lighten($datepicker__muted-color, 10%)

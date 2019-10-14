@@ -6,7 +6,7 @@ import NewPostCard from './NewPostCard'
 
 const NewPostsSection = () => {
   return (
-    <section className='post-section'>
+    <section className='section-divider post-section'>
       <div className="container max-width-lg padding-y-lg text-center">
         <h2 className='post-section__title'>Новости</h2>
         <div className='grid grid-gap-md margin-bottom-xs'>

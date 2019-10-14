@@ -12,7 +12,7 @@ import NewSinglePostPage from './NewSinglePostPage'
 import NewSingleGamePage from './NewSingleGamePage'
 import NewHeader from './NewHeader'
 import NewOrderModal from './NewOrderModal'
-import NewFooter from './NewFooter2'
+import NewFooter from './NewFooter'
 import NewNotFoundPage from './NewNotFoundPage'
 
 function Skeleton () {
@@ -37,7 +37,7 @@ function Skeleton () {
         <Route path='/rules'><NewRulesPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
         <Route path='*'><NewNotFoundPage/></Route>
       </Switch>
-      <NewFooter />
+      <NewFooter/>
     </div>
   )
 }

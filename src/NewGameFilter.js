@@ -4,14 +4,13 @@ import { getGameCategories } from './api'
 
 const NewGameFilter = ({setGamesFilter}) => {
   return (
-    <div>
-      <h3>Категории</h3>
+    <div className='container max-width-lg padding-y-md'>
       <Link style={{display: 'inline-block'}} key='0' to='/games'>
-        <div onClick={() => setGamesFilter(null)}>Все </div>
+        <button className='btn btn--sm margin-right-sm margin-bottom-sm' onClick={() => setGamesFilter(null)}>Все </button>
       </Link>
       {getGameCategories().map(cat =>
-        <Link style={{display: 'inline-block'}} key={cat.id} to='/games'>
-          <div onClick={() => setGamesFilter(cat.id)}>{cat.name}</div>
+        <Link key={cat.id} to='/games'>
+          <button className='btn btn--sm margin-right-sm margin-bottom-sm' onClick={() => setGamesFilter(cat.id)}>{cat.name}</button>
         </Link>)}
     </div>
   )

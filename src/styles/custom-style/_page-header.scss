@@ -1,0 +1,24 @@
+.page-header {
+  background: url("../../images-assets/bg-headers/01.jpg") center no-repeat;
+  background-size: cover;
+  height: var(--space-xxxxl);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--text-xl);
+    color: var(--color-white);
+    margin-bottom: var(--space-xs);
+  }
+
+  & .bread-crumbs {
+    font-size: var(--text-sm);
+
+    & span {
+      color: var(--color-contrast-medium);
+    }
+  }
+}

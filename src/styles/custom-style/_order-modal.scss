@@ -35,7 +35,7 @@
   overflow: auto;
   width: calc(100% - 2*var(--component-padding));
   max-height: calc(100vh - 4*(var(--modal-close-btn-size) + var(--modal-close-btn-padding)));
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
 }
 
 .modal__header {
@@ -55,7 +55,7 @@
 }
 .modal__devider {
   margin: var(--space-sm) 0;
-  background-color: var(--color-accent-light);
+  background-color: var(--color-primary-light);
   height: 2px;
 }
 

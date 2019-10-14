@@ -6,7 +6,7 @@ import NewCategoryItem from './NewCategoryItem'
 
 const NewCategorySection = ({ setGamesFilter }) => {
   return (
-    <section>
+    <section className='section-divider'>
       <div className='container padding-y-md'>
         <div className="parent grid grid-gap-md">
           {getGameCategories().map(cat =>

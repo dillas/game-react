@@ -1,0 +1,24 @@
+.gallery-section {
+  background: var(--color-primary);
+
+  & .slick-slide {
+    opacity: .6;
+  }
+  & .slick-current {
+    opacity: 1;
+  }
+}
+
+
+.gallery-slider-item__arrow {
+  top: 50%;
+
+
+  &--prev {
+    left: var(--space-xs);
+  }
+
+  &--next {
+    right: var(--space-xs);
+  }
+}

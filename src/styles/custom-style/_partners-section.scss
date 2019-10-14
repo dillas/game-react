@@ -7,6 +7,25 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 
+.partner-header {
+  font-weight: bold;
+  text-transform: none;
+  font-size: var(--text-md);
+  text-wrap: none;
+  background: url("../../images-assets/info-star.png") center top no-repeat;
+  text-align: center;
+  padding: 10px 0;
+
+}
+
+.partner-slider-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 94px;
+  padding: 0 32px;
+}
+
 .customer-logos {}
 
 .customer-logos__logo {

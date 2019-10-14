@@ -1,0 +1,82 @@
+.game-list {
+  :nth-child(even) .game-image {order: 1;}
+
+  @include breakpoint(md){
+    :nth-child(4n+1) .game-image {order: 0;}
+    :nth-child(4n+2) .game-image {order: 0;}
+    :nth-child(4n+3) .game-image {order: 1;}
+    :nth-child(4n)   .game-image {order: 1;}
+  }
+
+  @include breakpoint(xl){
+    :nth-child(6n+1) .game-image {order: 0;}
+    :nth-child(6n+2) .game-image {order: 0;}
+    :nth-child(6n+3) .game-image {order: 0;}
+    :nth-child(6n+4) .game-image {order: 1;}
+    :nth-child(6n+5) .game-image {order: 1;}
+    :nth-child(6n)   .game-image {order: 1;}
+  }
+}
+
+.game-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  font-size: var(--text-sm);
+
+  & h3 {
+    font-weight: bold;
+    font-size: var(--text-lg);
+    margin-bottom: var(--text-xs);
+
+    & a {
+      //text-decoration: none;
+    }
+  }
+
+  & ul {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-lg);
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding-left: 25px;
+      font-weight: 500;
+      margin-bottom: var(--space-sm);
+      background: url("../../images-assets/Success2.png") left center no-repeat;
+
+      span {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: var(--space-md);
+    height: var(--space-md);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--color-white);
+    z-index: var(--zindex-header);
+  }
+
+  & .game-image{
+    position: relative;
+    height: 100%;
+  }
+
+  & .game-cat {
+    background: var(--color-primary);
+    display: inline-block;
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    padding: var(--space-xs) var(--space-sm);
+    margin: 0 var(--space-sm) var(--space-sm) 0;
+  }
+}

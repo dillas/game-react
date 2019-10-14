@@ -1,9 +1,9 @@
 import React, {useState, useCallback} from 'react'
 import NewOrderSection from './NewOrderSection'
-import { Link } from 'react-router-dom'
 import NewVideoSection from './NewVideoSection'
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
+import NewPageHeader from './NewPageHeader'
 
 const photos = [
   {
@@ -102,13 +102,13 @@ const NewGalleryPage = props => {
   const {setModalIsShow, modalIsShow } = props
   return (
     <div>
-        <header><h1>Галерея</h1></header>
-        <p><Link to='/'>Главная</Link> / Галерея</p>
-        <hr/>
-        <div>
-          <NewVideoSection/>
-          <NewPhotoGallery/>
-        </div>
+      <NewPageHeader links={[{ to: '/', name: 'Главная' }]} title='Галерея'/>
+      <section className='section-divider'>
+          <div className='container max-width-lg padding-y-md'>
+            <NewVideoSection/>
+            <NewPhotoGallery/>
+          </div>
+      </section>
       <NewOrderSection setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} />
     </div>
   )

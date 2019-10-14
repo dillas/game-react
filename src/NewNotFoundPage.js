@@ -40,11 +40,11 @@ const NewNotFoundPage = () => {
                 <path d="M265.809,307.292a3,3,0,1,1,3.91-1.647A3,3,0,0,1,265.809,307.292Z" fill="#444"/>
               </g>
             </g>
-            <polygon id="i-fof-radar-body" points="415 410 105 410 196 106 324 106 415 410" fill="var(--color-accent)"
+            <polygon id="i-fof-radar-body" points="415 410 105 410 196 106 324 106 415 410" fill="var(--color-primary)"
                      opacity="0.5"/>
-            <ellipse id="i-fof-radar-bottom" cx="260" cy="410" rx="155" ry="28" fill="var(--color-accent)"/>
+            <ellipse id="i-fof-radar-bottom" cx="260" cy="410" rx="155" ry="28" fill="var(--color-primary)"/>
             <ellipse id="i-fof-shadow" cx="282" cy="410" rx="72" ry="10" opacity="0.4" fill="var(--color-black)"/>
-            <ellipse id="i-fof-radar-top" cx="260" cy="106" rx="64" ry="6" fill="var(--color-accent)"/>
+            <ellipse id="i-fof-radar-top" cx="260" cy="106" rx="64" ry="6" fill="var(--color-primary)"/>
           </svg>
         </div>
       </div>

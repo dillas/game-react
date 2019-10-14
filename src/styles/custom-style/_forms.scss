@@ -11,7 +11,7 @@
 }
 
 .form-control {
-  background-color: alpha(var(--color-accent-light), 0.8);
+  background-color: alpha(var(--color-primary-light), 0.8);
   color: var(--color-white);
   border: 2px solid var(--color-primary);
   font-size: var(--text-sm);
@@ -86,9 +86,9 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus
 {
   box-shadow: 0px 0px 0px 3px alpha(var(--color-error), 0.2);
-  border: 2px solid var(--color-accent);
+  border: 2px solid var(--color-primary);
   -webkit-text-fill-color: var(--color-white);
-  -webkit-box-shadow: 0 0 0px 1000px alpha(var(--color-accent), 0.8) inset;
+  -webkit-box-shadow: 0 0 0px 1000px alpha(var(--color-primary), 0.8) inset;
   //transition: background-color 5000s ease-in-out 0s;
   background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
 }
