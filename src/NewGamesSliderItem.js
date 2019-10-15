@@ -26,7 +26,7 @@ const NewGamesSliderItem = ({
 
             <Link className="game-slider-item__title" to={`/game/${id}`}>{name}</Link>
 
-            <p className="margin-bottom-md">{text.slice(0, 100)} &#8230;</p>
+            <p className="margin-bottom-md">{text.slice(0, 100).replace(/<[^>]*>?/gm, '')} &#8230;</p>
 
             <ul>
               <li>Количество игроков: <span>{count}</span></li>

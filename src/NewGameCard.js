@@ -19,7 +19,7 @@ const NewGameCard = props => {
           return <span className='game-cat' key={cat.id}>{cat.name} </span>
         })}
 
-        <p className="margin-bottom-md">{text.slice(0, 70)} &#8230;</p>
+        <p className="margin-bottom-md">{text.slice(0, 70).replace(/<[^>]*>?/gm, '')} &#8230;</p>
         <ul>
           <li>Количество игроков: <span>{count}</span></li>
           <li>Возрастные ограничения: <span>{age}</span></li>

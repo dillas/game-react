@@ -5,6 +5,7 @@ import { CONFIG } from './config'
 import NewOrderSection from './NewOrderSection'
 import NewPageHeader from './NewPageHeader'
 import NewSidebarSection from './NewSidebarSection'
+import ReactHtmlParser from 'react-html-parser'
 
 function NewSinglePostPage (props) {
   const { match, setModalIsShow, modalIsShow } = props
@@ -21,6 +22,8 @@ function NewSinglePostPage (props) {
               <img className='padding-bottom-md' src={`../${post.image}`} alt={post.name}  style={{width: '100%'}}/>
               <p><b>Категории: </b>{cat.name}</p>
               <p>{post.date}</p>
+
+              <p>{ReactHtmlParser(post.body)}</p>
             </div>
             <div className='col-3@sm'>
               <aside>
