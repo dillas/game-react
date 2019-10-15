@@ -14,6 +14,7 @@ import NewHeader from './NewHeader'
 import NewOrderModal from './NewOrderModal'
 import NewFooter from './NewFooter'
 import NewNotFoundPage from './NewNotFoundPage'
+import ScrollToTop from './ScrollToTop'
 
 function Skeleton () {
   const [navIsShow, setNavIsShow] = useState(false)
@@ -26,16 +27,16 @@ function Skeleton () {
       <NewHeader navIsShow={navIsShow} setNavIsShow={setNavIsShow} modalIsShow={modalIsShow} setModalIsShow={setModalIsShow}/>
       <NewOrderModal modalIsShow={modalIsShow} setModalIsShow={setModalIsShow}/>
       <Switch>
-        <Route exact path='/'><NewLandingPage setGamesFilter={setGamesFilter} setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
-        <Route path='/games'><NewGamesPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} gamesFilter={gamesFilter} setGamesFilter={setGamesFilter} /></Route>
-        <Route path='/game/:id'><NewSingleGamePage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} gamesFilter={gamesFilter} setGamesFilter={setGamesFilter}/></Route>
-        <Route path='/posts'><NewPostsPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} newsFilter={newsFilter} setNewsFilter={setNewsFilter}/></Route>
-        <Route path='/post/:id'><NewSinglePostPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} newsFilter={newsFilter} setNewsFilter={setNewsFilter}/></Route>
-        <Route path='/about'><NewAboutPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
-        <Route path='/contacts'><NewContactsPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} /></Route>
-        <Route path='/gallery'><NewGalleryPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
-        <Route path='/rules'><NewRulesPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
-        <Route path='*'><NewNotFoundPage/></Route>
+        <Route exact path='/'><ScrollToTop /><NewLandingPage setGamesFilter={setGamesFilter} setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
+        <Route path='/games'><ScrollToTop /><NewGamesPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} gamesFilter={gamesFilter} setGamesFilter={setGamesFilter} /></Route>
+        <Route path='/game/:id'><ScrollToTop /><NewSingleGamePage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} gamesFilter={gamesFilter} setGamesFilter={setGamesFilter}/></Route>
+        <Route path='/posts'><ScrollToTop /><NewPostsPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} newsFilter={newsFilter} setNewsFilter={setNewsFilter}/></Route>
+        <Route path='/post/:id'><ScrollToTop /><NewSinglePostPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} newsFilter={newsFilter} setNewsFilter={setNewsFilter}/></Route>
+        <Route path='/about'><ScrollToTop /><NewAboutPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
+        <Route path='/contacts'><ScrollToTop /><NewContactsPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} /></Route>
+        <Route path='/gallery'><ScrollToTop /><NewGalleryPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
+        <Route path='/rules'><ScrollToTop /><NewRulesPage setModalIsShow={setModalIsShow} modalIsShow={modalIsShow}/></Route>
+        <Route path='*'><ScrollToTop /><NewNotFoundPage/></Route>
       </Switch>
       <NewFooter/>
     </div>
