@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const NewVideoSection = () => {
+  const headerHeight = useRef(null);
+
   return (
-    <section className="video-bg">
+    <section ref={headerHeight} className="video-bg">
       <div className="video-bg__media" aria-hidden="true">
         <video
           autoPlay

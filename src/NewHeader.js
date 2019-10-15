@@ -14,6 +14,7 @@ const NewHeader = ({ navIsShow, setNavIsShow, setModalIsShow, modalIsShow }) => 
       if (!navIsShow) setShow(document.body.getBoundingClientRect().top > scrollPos)
     }
 
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {
@@ -22,7 +23,7 @@ const NewHeader = ({ navIsShow, setNavIsShow, setModalIsShow, modalIsShow }) => 
   })
 
   const toggleShowNav = show ? 'header--active ' : 'header--hidden '
-  const darkHeader = scrollPos < -608 ? 'header--dark ' : ''
+  const darkHeader = scrollPos < -20 ? 'header--dark ' : ''
 
   return (
     <header className={`header ${toggleShowNav} ${darkHeader}`}>
