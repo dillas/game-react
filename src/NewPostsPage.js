@@ -19,8 +19,8 @@ const NewPostsPage = props => {
               <div className='container padding-y-md'>
                 <div className="grid grid-gap-md">
                   {getPosts(null, newsFilter).reverse().map(post =>
-                    <div className="col-12@xs col-6@sm col-4@md">
-                      <NewPostCard key={post.id} post={post}/>
+                    <div key={post.id} className="col-12@xs col-6@sm col-4@md">
+                      <NewPostCard post={post}/>
                     </div>,
                   )}
                 </div>
@@ -34,8 +34,8 @@ const NewPostsPage = props => {
                       <Link key='0' to='/posts' onClick={() => setNewsFilter(null)}>Все</Link>
                     </li>
                     {getPostCategories().map(cat =>
-                      <li className='sidebar-section__link-item'>
-                        <Link onClick={() => setNewsFilter(cat.id)} key={cat.id} to='/posts'>
+                      <li key={cat.id} className='sidebar-section__link-item'>
+                        <Link onClick={() => setNewsFilter(cat.id)} to='/posts'>
                           {cat.name}
                         </Link>
                       </li>,
@@ -110,12 +110,12 @@ const NewPostsPage = props => {
                   {getGames(5)
                     .map(game =>
 
-                      <div className='sidebar-section__block-item grid grid-gap-sm'>
+                      <div key={game.id} className='sidebar-section__block-item grid grid-gap-sm'>
                         <div className='col-3'>
                           <img  src={game.image} alt={game.name}/>
                         </div>
                         <div className="col-9">
-                          <Link key={game.id} to={`/game/${game.id}`}>{game.name}</Link>
+                          <Link to={`/game/${game.id}`}>{game.name}</Link>
                         </div>
 
                       </div>

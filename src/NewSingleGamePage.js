@@ -29,18 +29,18 @@ function  NewSingleGamePage(props){
                   <li>Продолжительность: <span>{game.time}</span></li>
                 </ul>
               </div>
-              <p>{ReactHtmlParser(game.text)}</p>
+              {ReactHtmlParser(game.text)}
             </div>
             <div className='col-3@sm'>
               <aside>
                 <NewSidebarSection title='Похожие Игры'>
                   {getGames(5, game.cat[0]).map(game =>
-                    <div className='sidebar-section__block-item grid grid-gap-sm'>
+                    <div key={game.id} className='sidebar-section__block-item grid grid-gap-sm'>
                       <div className='col-3'>
                         <img  src={`../${game.image}`} alt={game.name}/>
                       </div>
                       <div className="col-9">
-                        <Link key={game.id} to={`/game/${game.id}`}>{game.name}</Link>
+                        <Link to={`/game/${game.id}`}>{game.name}</Link>
                       </div>
 
                     </div>
@@ -113,12 +113,12 @@ function  NewSingleGamePage(props){
                 <NewSidebarSection title='Порулярные новости'>
                   {getPosts(5).map(post =>
 
-                      <div className='sidebar-section__block-item grid grid-gap-sm'>
+                      <div key={post.id} className='sidebar-section__block-item grid grid-gap-sm'>
                         <div className='col-3'>
                           <img  src={`../${post.image}`} alt={post.name}/>
                         </div>
                         <div className="col-9">
-                          <Link key={post.id} to={`/post/${post.id}`}>{post.name}</Link>
+                          <Link to={`/post/${post.id}`}>{post.name}</Link>
                         </div>
 
                       </div>

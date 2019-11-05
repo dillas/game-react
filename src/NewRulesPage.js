@@ -51,12 +51,12 @@ const NewRulesPage = props => {
 
                     <NewSidebarSection title='Популярные игры'>
                       {getGames(5).map(post =>
-                        <div className='sidebar-section__block-item grid grid-gap-sm'>
+                        <div key={post.id} className='sidebar-section__block-item grid grid-gap-sm'>
                           <div className='col-3'>
                             <img  src={`../${post.image}`} alt={post.name}/>
                           </div>
                           <div className="col-9">
-                            <Link key={post.id} to={`/game/${post.id}`}>{post.name}</Link>
+                            <Link to={`/game/${post.id}`}>{post.name}</Link>
                           </div>
                         </div>
                       )}
@@ -127,14 +127,12 @@ const NewRulesPage = props => {
                     </div>
                       <NewSidebarSection title='Новые новости'>
                       {getPosts(5).map(post =>
-
-
-                        <div className='sidebar-section__block-item grid grid-gap-sm'>
+                        <div key={post.id} className='sidebar-section__block-item grid grid-gap-sm'>
                           <div className='col-3'>
-                            <img  src={`../${post.image}`} alt={post.name}/>
+                            <img src={`../${post.image}`} alt={post.name}/>
                           </div>
                           <div className="col-9">
-                            <Link key={post.id} to={`/post/${post.id}`}>{post.name}</Link>
+                            <Link to={`/post/${post.id}`}>{post.name}</Link>
                           </div>
                         </div>
 

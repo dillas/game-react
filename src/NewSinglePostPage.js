@@ -10,7 +10,6 @@ import ReactHtmlParser from 'react-html-parser'
 function NewSinglePostPage (props) {
   const { match, setModalIsShow, modalIsShow } = props
   const post = findPost(+match.params.id)
-  console.log(post)
   const cat = findPostCategory(post.cat)
   return (
     <div>
@@ -23,18 +22,18 @@ function NewSinglePostPage (props) {
               <p><b>Категории: </b>{cat.name}</p>
               <p>{post.date}</p>
 
-              <p>{ReactHtmlParser(post.body)}</p>
+              {ReactHtmlParser(post.body)}
             </div>
             <div className='col-3@sm'>
               <aside>
                 <NewSidebarSection title='Похожие новости'>
                     {getPosts(5, post.cat).map(post =>
-                      <div className='sidebar-section__block-item grid grid-gap-sm'>
+                      <div key={post.id} className='sidebar-section__block-item grid grid-gap-sm'>
                         <div className='col-3'>
                           <img src={`../${post.image}`} alt={post.name}/>
                         </div>
                         <div className="col-9">
-                          <Link key={post.id} to={`/post/${post.id}`}>{post.name}</Link>
+                          <Link to={`/post/${post.id}`}>{post.name}</Link>
                         </div>
                       </div>
                     )}
@@ -107,12 +106,12 @@ function NewSinglePostPage (props) {
                   {getGames(5)
                     .map(game =>
 
-                      <div className='sidebar-section__block-item grid grid-gap-sm'>
+                      <div key={game.id} className='sidebar-section__block-item grid grid-gap-sm'>
                         <div className='col-3'>
                           <img src={`../${game.image}`} alt={game.name}/>
                         </div>
                         <div className="col-9">
-                          <Link key={game.id} to={`/game/${game.id}`}>{game.name}</Link>
+                          <Link to={`/game/${game.id}`}>{game.name}</Link>
                         </div>
                       </div>
 

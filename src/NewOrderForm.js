@@ -59,11 +59,8 @@ const NewOrderForm = () => {
           async function main (actions) {
             const cat = findGameCategory(values.gameCategory)
             values.gameCategory = cat.name
-            console.log(values.gameCategory)
             await axios.post('https://bunker-mail-server.herokuapp.com/send', values)
               .then(function (response) {
-                console.log(response)
-                console.log(values)
                 actions.setSubmitting(false)
                 actions.resetForm()
               })
@@ -73,7 +70,6 @@ const NewOrderForm = () => {
           }
 
           main().catch(console.error)
-          console.log(values)
           actions.setSubmitting(false)
           actions.resetForm()
         }}
