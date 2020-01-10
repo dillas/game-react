@@ -127,7 +127,7 @@ const NewRulesPage = props => {
                     </div>
                       <NewSidebarSection title='Новые новости'>
                       {getPosts(5).map(post =>
-                        <div key={post.id} className='sidebar-section__block-item grid grid-gap-sm'>
+                        <div key={post.id}п className='sidebar-section__block-item grid grid-gap-sm'>
                           <div className='col-3'>
                             <img src={`../${post.image}`} alt={post.name}/>
                           </div>

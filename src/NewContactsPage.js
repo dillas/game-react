@@ -1,6 +1,6 @@
 import React from 'react'
 import NewOrderSection from './NewOrderSection'
-import NewMapSection from './NewMapSection'
+// import NewMapSection from './NewMapSection'
 import NewPageHeader from './NewPageHeader'
 import NewOrderForm from './NewOrderForm'
 
@@ -42,7 +42,7 @@ const NewContactsPage = props => {
 
         </div>
       </section>
-      <NewMapSection />
+      {/*<NewMapSection />*/}
       <NewOrderSection setModalIsShow={setModalIsShow} modalIsShow={modalIsShow} />
     </div>
   )

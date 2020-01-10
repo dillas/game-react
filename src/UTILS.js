@@ -8,7 +8,7 @@ Util.hasClass = function(el, className) {
   if (el.classList) return el.classList.contains(className);
   else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
 };
-
+ц
 Util.addClass = function(el, className) {
   let classList = className.split(' ');
   if (el.classList) el.classList.add(classList[0]);
